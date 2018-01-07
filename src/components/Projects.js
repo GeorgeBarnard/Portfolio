@@ -82,7 +82,7 @@ render() {
   let cube = portfolioItem.map(result =>
     <Cube className='NewCube animated boxIn'>
       <CubeImage src={result.img}></CubeImage>
-    <LearnMore onClick={() => this.LearnMore()}><p>Learn More ></p></LearnMore>
+      <LearnMore onClick={() => this.LearnMore()}><p>Learn More ></p></LearnMore>
     </Cube>
   )
     return (

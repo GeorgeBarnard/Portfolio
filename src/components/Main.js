@@ -29,7 +29,7 @@ const BoxThree = BoxOne.extend`
 z-index: 10; height: 600px; animation-delay: 0.6; width: 100%; bottom: 0;
 `
 const Title = styled.h1`
-  position: absolute; top: -10px; left: 10px; font-size: 7em; margin: 0; animation-delay: 0.16s
+  position: absolute; top: -10px; left: 10px; font-size: 7em; margin: 0; animation-delay: 0.16s; z-index: 100
 `
 const SubTitle = styled.h2`
 z-index: 40;color: white; font-size: 7.5em; font-weight: 900; position: absolute; right: 30px; bottom: 15px; margin: 0;
