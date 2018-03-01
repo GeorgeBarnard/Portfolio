@@ -20,7 +20,7 @@ const RouterComponent = () =>
            <Switch key={location.key} location={location}>
             <Route exact path="/" render={App}/>
             <Route exact path="/main" component={Main}/>
-          <Route exact path="/labs" component={Labs}/>
+            <Route exact path="/labs" component={Labs}/>
            </Switch>
         </CSSTransitionGroup>
       )}/>

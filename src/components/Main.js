@@ -7,7 +7,7 @@ import Projects from './Projects'
 import Slider from './Slider'
 
 const Container = styled.main`
-width: 100%; min-height: 100vh; position: absolute;
+width: 100%; min-height: 100vh; position: absolute; will-change: transform;
 `
 const Outer = styled.section`
 width: 100%; min-height: 100vh; position: relative; background-color: ${props => props.color}; margin-bottom: 250px
@@ -57,13 +57,13 @@ render() {
       <Outer color={'#fff'}>
         <Title className='animated boxIn'>Recent Projects</Title>
       <LinkRight onClick={() => this.rightClick()}><i className="material-icons">arrow_back</i><i className="material-icons">home</i><span>Home</span></LinkRight>
-        <BoxOne color={'rgba(180, 180, 180, 0.52)'} className='animated boxIn'></BoxOne>
+        {/* <BoxOne color={'rgba(180, 180, 180, 0.52)'} className='animated boxIn'></BoxOne>
         <BoxTwo color={'#F2EA1E'} className='animated boxIn'></BoxTwo>
-        <BoxThree color={'#73147c'} className='animated boxIn'></BoxThree>
+        <BoxThree color={'#73147c'} className='animated boxIn'></BoxThree> */}
       <SubTitle>More ↓</SubTitle>
       <Projects />
       </Outer>
-      <Slider />
+  
       </Container>
     );
   }
