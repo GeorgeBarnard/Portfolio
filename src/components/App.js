@@ -31,10 +31,10 @@ class App extends Component {
 
 scrollTo(location){
   const scrollSwitch = (value) => ({
-    'contact' : this.contactSection,
-    'bio' : this.bioSection,
-    'work' : this.workSection,
-    'slider' : this.slider
+    'Contact' : this.contactSection,
+    'Bio' : this.bioSection,
+    'Work' : this.workSection,
+    'Slider' : this.slider
   })[value]
   scrollToComponent(scrollSwitch(location), {align: 'middle'});
 }
@@ -63,7 +63,7 @@ scrollTo(location){
         <Bio ref={(section => (this.bioSection = section))} />
         <Projects ref={(section => (this.workSection = section))} color='white' />
         <Contact ref={(section => (this.contactSection = section))} />
-        <Slider ref={(section => (this.Slider = section))} color='white' />
+      <Slider ref={(section => (this.slider = section))} color='white' />
         {/* <Slider /> */}
       </Outer>
     );

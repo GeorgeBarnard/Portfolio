@@ -128,7 +128,7 @@ render() {
           <TitleContainer slide={this.state.boxTrigger ? '0px' : '100vw'}>
             {currentItem.name}<br/>
             <p>Woodbridge<br/>Suffolk</p>
-          <ViewButton onClick={() => this.changeSlide()}>View</ViewButton>
+          {/* <ViewButton onClick={() => this.changeSlide()}>View</ViewButton> */}
           <NextButton onClick={() => this.changeSlide()}>Next</NextButton>
           <p className='mobile-message'>(Click Mobile to expand)</p>
           </TitleContainer>

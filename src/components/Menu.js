@@ -10,20 +10,14 @@ class App extends Component {
    }
  }
 
-  Click(){
-    // this.props.history.push('/main')
-    this.props.scroll('work')
+  Click(location){
+    this.props.scroll(location)
     this.toggleMenu()
   }
   gitClick(){
     this.props.history.push('/labs')
     this.toggleMenu()
   }
-  conClick(){
-    this.props.scroll('contact')
-    this.toggleMenu()
-  }
-
   toggleMenu(){
     this.state.toggled ?
     this.setState({toggled: false}) :
@@ -35,12 +29,12 @@ class App extends Component {
     return (
 
           <LinkSection toggled={this.state.toggled}>
-          <MenuButton onClick={() => this.toggleMenu()}><i className="material-icons">menu</i></MenuButton>
-          <LinkLeft2 onClick={() => this.Click('Git')}><i className="devicon-github-plain"></i><i className="material-icons">arrow_forward</i><span>Git</span></LinkLeft2>
-          <LinkLeft onClick={() => this.Click('Bio')}><i className="material-icons">person</i><i className="material-icons">arrow_downward</i><span>Bio</span></LinkLeft>
-          <LinkLeft onClick={() => this.Click('Work')}><i className="material-icons">work</i><i className="material-icons">arrow_downward</i><span>Work</span></LinkLeft>
-          <LinkLeft3 onClick={() => this.Click('Contact')}><i className="material-icons">phone</i><i className="material-icons">arrow_downward</i><span>Con</span></LinkLeft3>
-          <LinkLeft3 onClick={() => this.Click('Slider')}><i className="material-icons">add_to_queue</i><i className="material-icons">arrow_downward</i><span>More</span></LinkLeft3>
+            <MenuButton onClick={() => this.toggleMenu()}><i className="material-icons">menu</i></MenuButton>
+            <LinkLeft col={'white'} bg={'#0f0f0f'} onClick={() => this.gitClick()}><i className="devicon-github-plain"></i><i className="material-icons">arrow_forward</i><span>Git</span></LinkLeft>
+            <LinkLeft col={'white'} bg={'#002e67'} onClick={() => this.Click('Bio')}><i className="material-icons">person</i><i className="material-icons">arrow_downward</i><span>Bio</span></LinkLeft>
+            <LinkLeft col={'#131313'} bg={'#45e26b'} onClick={() => this.Click('Work')}><i className="material-icons">work</i><i className="material-icons">arrow_downward</i><span>Work</span></LinkLeft>
+            <LinkLeft col={'white'} bg={'#002e67'} onClick={() => this.Click('Contact')}><i className="material-icons">phone</i><i className="material-icons">arrow_downward</i><span>Con</span></LinkLeft>
+            <LinkLeft col={'black'} bg={'white'} onClick={() => this.Click('Slider')}><i className="material-icons">add_to_queue</i><i className="material-icons">arrow_downward</i><span>More</span></LinkLeft>
           </LinkSection>
 
     );
@@ -99,8 +93,8 @@ const LinkLeft = styled.section`
   width: 100%;
   height: 50px;
   position: relative;
-  background-color: #002e67;
-  color: white;
+  background-color: ${props => props.bg};
+  color: ${props => props.col};
   margin-bottom: 10px;
   span{
     margin-left: 3.5px;
@@ -113,10 +107,3 @@ const LinkLeft = styled.section`
     }
   }
 `
-const LinkLeft2 = LinkLeft.extend`
- background-color: rgb(23, 23, 23);
-`
-
-const LinkLeft3 = LinkLeft.extend`
- background-color: rgb(255, 255, 255); color: rgb(27, 27, 27);
- `

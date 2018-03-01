@@ -13,6 +13,7 @@ export default class Contact extends Component {
         <h1>Contact me today</h1>
         <h3>george_barnard@ymail.com</h3>
         <h5>07917308444</h5>
+        <h5>Hammersmith, London</h5>
         </Inner>
         <LabsLink />
       </Outer>
@@ -79,7 +80,7 @@ h3{
   }
 }
 h5{
-  margin: 5px auto 30px;
+  margin: 5px auto 0px;
   font-size: 0.7em;
   width: 100%;
   font-weight: 500;

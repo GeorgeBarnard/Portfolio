@@ -32,7 +32,7 @@ export default class ProjectMask extends Component {
           <div>
             <h4>{this.props.item ? this.props.item.name : ''}</h4>
           {content}
-          <button>Visit</button>
+          <a href={this.props.item ? this.props.item.link : ''}><button>Visit</button></a>
           </div>
         </ContentSection>
       </Mask>

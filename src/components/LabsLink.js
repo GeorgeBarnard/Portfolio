@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import hang from '../img/hang2.png'
+import headshot from '../img/headshot.jpg'
 
 export default class LabsLink extends Component {
 
@@ -9,7 +9,7 @@ export default class LabsLink extends Component {
     return (
       <Outer>
         <Image>
-          <img src='http://kindling.xyz/wp-content/uploads/2016/07/Peter-Headshot-Square-1-e1478814843321.jpg'></img>
+          <img src={headshot}></img>
         </Image>
         <Labs>
           <h1>View My Code</h1>
@@ -106,7 +106,6 @@ const Image = styled.section`
     width: 100%;
     max-width: 350px;
     float: right;
-    filter: grayscale(0.5);
   }
   @media (min-width: ${Sizes.desktop}) {
     padding: 30px;
