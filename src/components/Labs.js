@@ -29,23 +29,29 @@ render() {
       <Outer color={'rgba(255, 255, 255, 1)'}>
         <Inner>
           <h1>Labs</h1>
-          <p>Current Project:</p>
+          <h4>Current Project:</h4>
           <h2>Related</h2>
           <section className='button-section'>
             <a><button>Live Site <i className="material-icons">web</i></button></a>
             <a><button>View on GitHub <i className="devicon-github-plain"></i></button></a>
           </section>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis quam iaculis, elementum elit sit amet, luctus orci. Mauris sit amet sapien eros. Duis lacus est, fringilla ac dui eget, suscipit luctus sapien. Duis non purus a nulla euismod consectetur ultricies ut est. Quisque non ligula ante. Nunc nisi ante, tincidunt ac ante vitae, eleifend hendrerit augue. Praesent pharetra vel metus euismod ultrices. Donec sed vulputate tellus, in pharetra nisl. Sed volutpat eros aliquam arcu finibus maximus.
+          <p>Related is a Spotify based related artist finder and playlist creator. It came about when the company I was working for at the time needed me to look into making API calls within a React project. So I guess you could call it a fairly simple exercise that got out of hand.. <br /><br /> I had been working with React for around a year at this point, and I knew the environment very well, but on all previous projects we used Firebase as a backend, which although very similar, uses a different method for obtaining data.
           </p>
           <img src={image}></img>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis quam iaculis, elementum elit sit amet, luctus orci. Mauris sit amet sapien eros. Duis lacus est, fringilla ac dui eget, suscipit luctus sapien. Duis non purus a nulla euismod consectetur ultricies ut est. Quisque non ligula ante. Nunc nisi ante, tincidunt ac ante vitae, eleifend hendrerit augue. Praesent pharetra vel metus euismod ultrices. Donec sed vulputate tellus, in pharetra nisl. Sed volutpat eros aliquam arcu finibus maximus.<br/><br/>
-          Morbi id gravida dui. Pellentesque laoreet volutpat ipsum, at malesuada lacus. Integer porttitor tempus leo, eu tincidunt eros dignissim vel. Aenean vestibulum luctus dolor accumsan aliquam. Ut ac mollis massa, sit amet rutrum ante. Suspendisse tempus turpis dolor, tempus gravida leo pulvinar eu. Aliquam erat volutpat. Nullam ornare ligula et odio hendrerit, ut scelerisque tortor interdum. Nulla consequat iaculis magna, venenatis sagittis ligula porttitor a. Aliquam aliquet viverra sem   volutpat sagittis. Vestibulum ut varius lacus.<br/><br/>
-          Donec enim erat, vehicula ut ullamcorper nec, cursus eget eros. Vestibulum tristique nunc id laoreet fermentum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur pharetra vehicula elit, nec sollicitudin elit gravida nec. Donec varius, orci ut accumsan convallis, ante ex iaculis lorem, mollis rutrum nisl elit in libero. Sed scelerisque lacus at nisl facilisis, dignissim lacinia eros porta. Etiam porta erat at vulputate commodo. Nunc tincidunt velit ut diam pellentesque tempus. Aenean a ex eu nulla volutpat sagittis ut quis ante. Mauris varius dictum augue sed finibus. Aenean rutrum malesuada nisi non congue. In eu fringilla odio, at molestie velit.
-          </p>
-            <img src={image2}></img>
           <p>
-            Etiam pretium commodo arcu sed egestas. Aliquam interdum, ex quis varius interdum, nisl turpis sollicitudin enim, quis semper ante justo sit amet est. Phasellus et fringilla risus. Vivamus fringilla congue sem, quis consectetur velit ultricies sit amet. Curabitur pretium odio et ante lacinia, vel vehicula justo cursus. Praesent dapibus tortor vel pulvinar semper. Praesent pulvinar leo neque, ac tincidunt orci imperdiet tristique.<br/><br/>
-            Proin non nisl et nulla vestibulum tristique. Nullam vestibulum, mauris et dignissim ornare, magna nibh feugiat nibh, molestie congue felis tortor convallis sapien. Aliquam nec dolor et tellus fringilla viverra. Aenean feugiat vehicula magna, eu dictum nibh placerat ut. Nam id purus tempor orci dapibus pretium at ut sapien. Nullam facilisis felis sed elit placerat, eget vulputate odio ullamcorper. Aenean tincidunt, turpis quis scelerisque iaculis, lorem sapien dictum sapien, vel pretium nisl lacus nec ex. Suspendisse ac suscipit risus.
+            The project is created on the massively popular create-react-app, I then added my fairly default collection of react packages React Router v4, CSS-transitions, Styled-components and in this case we use axios to make the Api calls. I decided against Redux on this project as I didn’t see that it would be necessary with the low number of components used.
+          <br/><br/>
+          In terms of interface design, the layout is heavily influenced by the return of rounded corners and box shadows to modern user interfaces (e.g iOS.11 store). Translucent background images that fill the screen have become somewhat of a trait of mine, in this case having the whole page look completely different when you open each artist works pretty effectively.  <br/><br/>
+          Recently a lot of my time has been spent trying to perfect animated transitions between elements. For the main transition here from clicking a single card to opening the full screen window, I would originally just add and remove a ‘toggled’ CSS class to the full screen window, this would then animate the css ‘top’ attribute. This is bad. Neither adding and removing classes or animating the top attribute is computant or  recommended by react.<br/> <br/>
+        Fortunately Styled-components offers perfect functionality that allows for easy transition based on a state change. As the markup for styled components is built with strings we are able to inject javascript variables into our CSS using template literals. We can then use Es6 conditional statements to return a different value based upon the passed property or state. Like this...
+          </p>
+          <iframe src="//jsfiddle.net/3eawtd1m/embedded/js/" allowpaymentrequest allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+          <p>It’s also worth mentioning that by using transforms instead of animating a positional value, we can get much smoother transitions. This is mainly down to browsers being able to use hardware acceleration for the transform, opacity and filter properties. </p>
+          <img src={image2}></img>
+          <p>
+            Using the spotify Api was a relatively painless experience, they offer hundreds of endpoints and return well curated information. The auth flow was less enjoyable, however I would probably put this down to having used Google’s oAuth service many times and simply being unfamiliar with Spotify’s environment. In the future I would definitely like to explore more of the available options and build the application out. <br/><br/>
+            Related is really a very simple application, built with the intention of having a smooth user experience. Regrettably I am sure there are still bugs, and there is very little in the way of error checking, but it is not a production application. It is however definitely a start and if, by some miracle, you found the project then go ahead and make it yours! <br/><br/>
+            George
           </p>
         </Inner>
         <LinkRight onClick={() => this.rightClick()}><i className="material-icons">arrow_back</i><i className="material-icons">home</i><span>Home</span></LinkRight>
@@ -77,31 +83,58 @@ box-sizing: border-box;
 display: flex;
 flex-wrap: wrap;
 text-align: center;
+pre code{
+  display: block;
+    padding: 0.5em;
+    color: #333;
+    background: #f8f8ff;
+}
 `
 
 const Inner = styled.section`
   width: 100%;
   height: 100%;
   text-align: center;
-  padding: 50px 50px 150px;
+  padding: 50px 35px 150px;
   box-sizing: border-box;
+  @media (min-width: ${Sizes.laptop}) {
+    padding: 50px 50px 150px;
+  }
   h1{
     font-size: 3em;
     margin: 0;
   }
   h2{
-    margin-bottom: 0;
+    margin: 5px 0;
+    @media (min-width: ${Sizes.laptop}) {
+      margin-top: 20px;
+    }
   }
   p{
-    margin: 0 auto;
-    width: 90%;
+    margin: 10px auto;
+    width: 100%;
+    text-align: left;
+    line-height: 14px;
     @media (min-width: ${Sizes.laptop}) {
       width: 50%;
+      line-height: 24px;
     }
   }
   img{
     width: 90%;
-    margin-top: -50px;
+    margin: 0;
+    @media (min-width: ${Sizes.laptop}) {
+      margin-top: -50px;
+      width: 50%;
+    }
+  }
+  iframe{
+    display: block;
+    margin: 30px auto;
+    width: 90%;
+    #tabs .tCont{
+      overflow: hidden;
+    }
     @media (min-width: ${Sizes.laptop}) {
       width: 50%;
     }
@@ -111,22 +144,32 @@ const Inner = styled.section`
     button{
       font-size: 1em;
       height: 50px;
-      margin: 20px 5px;
+      margin: 5px;
       padding: 10px 20px;
       outline: none;
-      background-color: green;
+      border: none;
+      background-color: #09e076;
       i{
         font-size: 1.3em;
         vertical-align: -3.5px;
       }
-
+      @media (min-width: ${Sizes.laptop}) {
+        margin: 20px 5px;
+      }
     }
   }
 `
 const LinkRight = styled.section`
-width: 50px; height: 50px; background-color: #F2EA1E; position: fixed; top: 90vh; left: 30px; z-index: 399;
+width: 50px;
+height: 50px;
+background-color: #F2EA1E;
+position: fixed;
+top: 15px;
+left: 15px;
+z-index: 399;
 span{margin-left: 3px}
-@media (max-width: 992px) {
-  top: 30px
+@media (min-width: ${Sizes.laptop}) {
+  top: 90vh;
+  left: 30px;
 }
 `

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import hang from '../img/hang2.png'
 import LabsLink from './LabsLink'
 
 export default class Contact extends Component {
@@ -13,7 +12,7 @@ export default class Contact extends Component {
         <h1>Contact me today</h1>
         <h3>george_barnard@ymail.com</h3>
         <h5>07917308444</h5>
-        <h5>Hammersmith, London</h5>
+        <h5 className='last'>Hammersmith, London</h5>
         </Inner>
         <LabsLink />
       </Outer>
@@ -78,6 +77,10 @@ h3{
     margin: 10px auto;
     font-size: 1.1em;
   }
+}
+.last{
+  margin-bottom: 30px;
+  margin-top: 2.5px;
 }
 h5{
   margin: 5px auto 0px;

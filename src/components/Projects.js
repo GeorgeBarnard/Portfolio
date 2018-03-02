@@ -3,12 +3,10 @@ import RouterComponent from './RouterComponent'
 import styled from 'styled-components';
 import {Link, withRouter} from 'react-router-dom'
 
-import Screen from '../img/screen.png'
-import Screen2 from '../img/screen2.png'
-import water from '../img/water-min.jpg'
-import flowers from '../img/flowers-min.jpg'
-import pixel from '../img/PixelArt4-min.jpg'
-import ergie from '../img/ergie-background-min.jpg'
+import grassBG from '../img/grass.png'
+import aliceBG from '../img/aliceBG.jpg'
+import rowsquadBG from '../img/rowsquadBG.jpeg'
+import boathouseBG from '../img/boathouseBG.jpeg'
 
 import aliceScreen from '../img/alice-screen-min.png'
 import rowsquadScreen from '../img/rowsquad-screen-min.png'
@@ -51,28 +49,28 @@ render() {
        'description': 'Classifieds/Social Network application',
        'screen' : myboathouseScreen,
        'link' : 'https://myboathouse.co.uk',
-       'background' : 'https://images.unsplash.com/photo-1478510862486-5da2c60876d2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=17e372c3195cb9fd4e330c45535a22ea&auto=format&fit=crop&w=1350&q=80'
+       'background' : boathouseBG
      },
      {
        'name' : 'RowSquad',
        'description': 'Training and analytics application',
        'screen' : rowsquadScreen,
        'link' : 'https://rowsquad.com',
-       'background' : 'https://images.unsplash.com/photo-1519505645104-c7be90e0d630?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9dc1218d263adacfa712911a7199b14f&auto=format&fit=crop&w=1350&q=80'
+       'background' : rowsquadBG
      },
      {
        'name' : 'Alice Benham',
        'description': 'Inbound marketing website',
        'screen' : aliceScreen,
        'link' : 'http://www.alicebenham.co.uk',
-       'background' : 'http://alicebenham.co.uk/wp-content/uploads/2017/07/computer.jpg'
+       'background' : aliceBG
      },
      {
        'name' : '3Mojis',
        'description': 'Creative writing app/mobile app',
        'screen' : mojiscreen,
        'link' : '',
-       'background' : 'http://pixeljoint.com/files/icons/full/grass__r1209392301.png'
+       'background' : grassBG
      }
    ]
   let cube = portfolioItem.map(result =>
@@ -85,6 +83,7 @@ render() {
     </Cube>
   )
     return (
+
       <Outer color={'rgb(255, 255, 255)'}>
         <section className='bluebox'><h1>Work</h1><i className="material-icons">arrow_downward</i></section>
         {cube}
@@ -106,10 +105,11 @@ const Sizes = {
 const Outer = styled.section`
 width: 100%;
 height: 100%;
+margin-top: -2px;
 position: relative;
 background-color: ${props => props.color};
 z-index: 9999;
-padding: 10vw 10%;
+padding: 10vh 10%;
 box-sizing: border-box;
 display: flex;
 flex-wrap: wrap;
@@ -120,9 +120,9 @@ justify-content: center;
 .bluebox{
   position: absolute;
   width: 50%;
-  height: 100%;
+  height: calc(100% + 2px);
   right: 0;
-  top: 0;
+  top: -2px;
   background-color: #080461;
   i{
     position: absolute;
@@ -235,6 +235,7 @@ const CubeBackground = styled.img`
 `
 const CubeOverlay = styled.section`
   width: 100%;
+  cursor: pointer;
   height: 100%;
   position: absolute;
   background-color: rgba(82, 82, 82, 0.65);
@@ -249,7 +250,9 @@ const CubeOverlay = styled.section`
     display: flex;
   }
   .OverlayButton{
+    cursor: pointer;
     font-size: 1em;
+    user-select: none;
     color: white;
     padding: 10px 20px;
     position: relative;

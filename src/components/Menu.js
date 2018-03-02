@@ -30,7 +30,7 @@ class App extends Component {
 
           <LinkSection toggled={this.state.toggled}>
             <MenuButton onClick={() => this.toggleMenu()}><i className="material-icons">menu</i></MenuButton>
-            <LinkLeft col={'white'} bg={'#0f0f0f'} onClick={() => this.gitClick()}><i className="devicon-github-plain"></i><i className="material-icons">arrow_forward</i><span>Git</span></LinkLeft>
+            <LinkLeft col={'white'} bg={'#0f0f0f'} onClick={() => this.gitClick()}><i className="devicon-github-plain"></i><i className="material-icons">arrow_forward</i><span>Labs</span></LinkLeft>
             <LinkLeft col={'white'} bg={'#002e67'} onClick={() => this.Click('Bio')}><i className="material-icons">person</i><i className="material-icons">arrow_downward</i><span>Bio</span></LinkLeft>
             <LinkLeft col={'#131313'} bg={'#45e26b'} onClick={() => this.Click('Work')}><i className="material-icons">work</i><i className="material-icons">arrow_downward</i><span>Work</span></LinkLeft>
             <LinkLeft col={'white'} bg={'#002e67'} onClick={() => this.Click('Contact')}><i className="material-icons">phone</i><i className="material-icons">arrow_downward</i><span>Con</span></LinkLeft>

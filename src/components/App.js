@@ -3,22 +3,13 @@ import { Link, withRouter} from 'react-router-dom'
 import styled from 'styled-components'
 import scrollToComponent from 'react-scroll-to-component';
 
-
-import MountainImg from '../img/piece1.png'
-import MaskImg from '../img/mask4.svg'
-import headshot from '../img/headshot.png'
-import suit from '../img/spacegeorge4-min.png'
 import waveguy from '../img/sitting-min.png'
-import Waypoint from 'react-waypoint';
-// import suit from '../img/iron.png'
 
 import Bio from './Bio'
 import Menu from './Menu'
 import Slider from './Slider'
 import Projects from './Projects'
 import Contact from './Contact'
-
-
 
 class App extends Component {
   constructor() {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom'
 
 import headshot from '../img/headshot.jpg'
 
@@ -15,7 +16,7 @@ export default class LabsLink extends Component {
           <h1>View My Code</h1>
           <h3>Visit My Github</h3>
           <h5>To The Labs! </h5>
-        <GitButton><i className="devicon-github-plain"></i> <i className="material-icons">arrow_forward</i></GitButton>
+        <Link to={'/labs'}><GitButton><i className="devicon-github-plain"></i> <i className="material-icons">arrow_forward</i></GitButton></Link>
         </Labs>
       </Outer>
     );
@@ -51,6 +52,7 @@ const Labs = styled.section`
   text-align: right;
   padding: 0 5vw;
   box-sizing: border-box;
+  margin-bottom: -2px;
 h1{
   font-size: 1.2em;
   width: 100%;
@@ -96,6 +98,7 @@ img{
 
 const Image = styled.section`
   width: 50%;
+  margin-top: -2px;
   padding: 5%;
   background-color: #09e076;
   display: flex;
@@ -109,6 +112,7 @@ const Image = styled.section`
   }
   @media (min-width: ${Sizes.desktop}) {
     padding: 30px;
+    margin-top: 0;
   }
 `
 

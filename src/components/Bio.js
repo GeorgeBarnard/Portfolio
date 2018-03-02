@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 import RouterComponent from './RouterComponent'
 import styled from 'styled-components';
 import {Link, withRouter} from 'react-router-dom'
-import Waypoint from 'react-waypoint';
-
-import hang from '../img/hang3.png'
-
-
-
 
  export default class Labs extends Component {
   constructor() {
@@ -33,7 +27,7 @@ render() {
                 </TitleSection>
               </Inner>
               <Inner2>
-                {/* <img src={hang} className='hang'></img> */}
+
                 <div className='box-content'>
                   <h3 className='title'>What I do</h3>
                   I am a web developer, I have primarily been working with front end frameworks, such as react, on projects for the past 2 years<br /><br />
@@ -41,10 +35,7 @@ render() {
                   I have been designing user experiences for over 6 years in both the web and audio software industries<br/><br />
                   The user comes first and I have, and continue to, try hard to make it as easy for them as possible
                 </div>
-                {/* <section className='icon-container'><i className="devicon-sass-original"></i><p>Sass</p></section>
-                <section className='icon-container'><i className="devicon-nodejs-plain-wordmark"></i><p>Node.js</p></section>
-                <section className='icon-container'><i className="devicon-webpack-plain"></i><p>Webpack</p></section>
-                <section className='icon-container'><i className="devicon-babel-plain"></i><p>Babel</p></section> */}
+
               </Inner2>
             </InnerContainer>
             <Inner3>

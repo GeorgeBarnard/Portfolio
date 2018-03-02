@@ -5,12 +5,41 @@ import {Link, withRouter} from 'react-router-dom'
 
 import '../App.css';
 import Image from '../img/test1.svg'
-import Image2 from '../img/test2.svg'
-import Screen from '../img/screen-min.png'
-import Screen2 from '../img/screen2-min.png'
-import Phone from '../img/android-min.png'
-import sit from '../img/sittingdown.png'
-import Waypoint from 'react-waypoint'
+
+import Gamekeeper from '../img/screen-min.png'
+import GamekeeperMob from '../img/gamekeeper-mob.png'
+
+import Related from '../img/related1.png'
+import RelatedMob from '../img/Related-mob.png'
+
+import Youth from '../img/youth-screen.png'
+import YouthMob from '../img/youth-mob.png'
+
+import Tshirt from '../img/tshirt-screen.png'
+import TshirtMob from '../img/tshirt-mob.png'
+
+const portfolioItem = [
+   {
+     'name' : 'The Gamekeeper',
+     'img' : Gamekeeper,
+     'mob' : GamekeeperMob
+   },
+   {
+     'name' : 'Related',
+     'img' : Related,
+     'mob' : RelatedMob
+   },
+   {
+     'name' : 'WhatAreYouthSayin',
+     'img' : Youth,
+     'mob' : YouthMob
+   },
+   {
+     'name' : 'Tshirt.co.uk',
+     'img' : Tshirt,
+     'mob' : TshirtMob
+   }
+ ]
 
 
 export default class slider extends Component {
@@ -65,8 +94,9 @@ export default class slider extends Component {
     })
     var self = this
     setTimeout(function() {
+
       var selected = self.state.selectedSet
-      if (selected < 1) {
+      if (selected < (portfolioItem.length - 1)) {
         selected++
         self.setState({selectedSet: selected, boxTrigger: true})
       } else {
@@ -85,24 +115,10 @@ export default class slider extends Component {
 
 
 render() {
-  var portfolioItem = [
-     {
-       'name' : 'The Gamekeeper',
-       'img' : Screen
-     },
-     {
-       'name' : 'Farnham Farmhouse',
-       'img' : Screen2
-     }
-   ]
+
    var currentItem = portfolioItem[this.state.selectedSet]
     return (
 
-      // <Waypoint
-      //   onEnter={() => this.pointHit()}
-      //   onLeave={() => this.pointLeft()}
-      //   topOffset='50px'
-      //   >
         <Container ref='container' color={this.state.boxTrigger ? 'white' : 'white'}>
             <DownSection hide={this.state.boxTrigger}>
                 <p>More work down here</p>
@@ -123,16 +139,14 @@ render() {
               toggle={this.state.phoneToggle}
               slide={this.state.boxTrigger ? '55%' : '-50vw'}
               smallSlide={this.state.boxTrigger ? '8%' : '-50vw'}
-              src={Phone}>
+              src={currentItem.mob}>
            </PhoneImg>
           <TitleContainer slide={this.state.boxTrigger ? '0px' : '100vw'}>
             {currentItem.name}<br/>
             <p>Woodbridge<br/>Suffolk</p>
-          {/* <ViewButton onClick={() => this.changeSlide()}>View</ViewButton> */}
           <NextButton onClick={() => this.changeSlide()}>Next</NextButton>
           <p className='mobile-message'>(Click Mobile to expand)</p>
           </TitleContainer>
-          {/* <SittingMan src={sit}></SittingMan> */}
         </Container>
     );
   }

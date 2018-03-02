@@ -32,7 +32,7 @@ export default class ProjectMask extends Component {
           <div>
             <h4>{this.props.item ? this.props.item.name : ''}</h4>
           {content}
-          <a href={this.props.item ? this.props.item.link : ''}><button>Visit</button></a>
+          <a href={this.props.item ? this.props.item.link : ''}><button>Visit <i className="material-icons">exit_to_app</i></button></a>
           </div>
         </ContentSection>
       </Mask>
@@ -240,13 +240,19 @@ const ContentSection = styled.section`
       padding: 0 5%;
     }
   }
+  a{
+    text-decoration: none;
+  }
   button{
-    background-color: white;
+    font-size: 1em;
+    background-color: #09e076;
     border: none;
-    width: 50px;
-    height: 25px;
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
+    padding: 5px 10px;
+    display: block;
+    margin: 10px 0 5px;
+    i{
+      font-size: 1em;
+      vertical-align: -2px;
+    }
   }
 `
