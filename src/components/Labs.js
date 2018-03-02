@@ -114,10 +114,9 @@ const Inner = styled.section`
     margin: 10px auto;
     width: 100%;
     text-align: left;
-    line-height: 14px;
+    line-height: 24px;
     @media (min-width: ${Sizes.laptop}) {
       width: 50%;
-      line-height: 24px;
     }
   }
   img{
@@ -132,9 +131,7 @@ const Inner = styled.section`
     display: block;
     margin: 30px auto;
     width: 90%;
-    #tabs .tCont{
-      overflow: hidden;
-    }
+    max-width: 90%;
     @media (min-width: ${Sizes.laptop}) {
       width: 50%;
     }
