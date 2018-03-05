@@ -66,12 +66,13 @@ h1{
   }
 }
 h3{
-  font-size: 0.9em;
+  font-size: 0.6em;
   width: 100%;
-  margin: 10px auto; 10px;
-  font-weight: 500;
+  margin: 0px auto; 10px;
+  font-weight: 300;
   @media (min-width: ${Sizes.tablet}) {
     font-size: 1.1em;
+    margin: 10px auto; 10px;
   }
   @media (min-width: ${Sizes.desktop}) {
     font-size: 1.75em;
@@ -79,9 +80,9 @@ h3{
 }
 h5{
   margin: 5px auto 10px;
-  font-size: 0.7em;
+  font-size: 0.6em;
   width: 100%;
-  font-weight: 500;
+  font-weight: 300;
   @media (min-width: ${Sizes.desktop}) {
     font-size: 1.35em;
     margin: 5px auto 20px;

@@ -11,6 +11,7 @@ export default class ProjectMask extends Component {
   render() {
     document.body.classList.toggle('noScroll', this.props.toggled)
     var content;
+    var link;
     const scrollSwitch = (value) => ({
       'MyBoathouse' : MyBoathouse,
       'RowSquad' : RowSquad,
@@ -20,6 +21,7 @@ export default class ProjectMask extends Component {
     this.props.item ?
     content = scrollSwitch(this.props.item.name)
     : ''
+
 
     return (
       <Mask closing={this.props.closed} toggled={this.props.toggled}>
@@ -32,7 +34,7 @@ export default class ProjectMask extends Component {
           <div>
             <h4>{this.props.item ? this.props.item.name : ''}</h4>
           {content}
-          <a href={this.props.item ? this.props.item.link : ''}><button>Visit <i className="material-icons">exit_to_app</i></button></a>
+          {this.props.item && this.props.item.link.length >= 5 ? (<a href={this.props.item ? this.props.item.link : ''}><button>Visit <i className="material-icons">exit_to_app</i></button></a>) : (<button className='coming-soon'>Coming Soon!</button>)}
           </div>
         </ContentSection>
       </Mask>
@@ -43,19 +45,19 @@ export default class ProjectMask extends Component {
 
 const MyBoathouse = (
     <span>MyBoathouse is one of the largest online marketplaces for buying and selling rowing equiptment in the UK.<br/><br/>
-    Built in 2016 using vanilla javascript and a firebase backend, it has quickly become a valuable resource for over 10,000 UK rowers annually.<br/><br/>
+    Built in 2016 using vanilla javascript with a firebase backend, it has quickly become an invaluable resource for over 10,000 UK rowers annually.<br/><br/>
     <span className='bold'>Role: </span>Frontend Developer<br/><br/>
     <span className='bold'>Tech: </span>Vanilla JavaScript, Firebase, Google Cloud Functions, Gulp, Material Design Light </span>)
 
 const RowSquad = (
-    <span>RowSquad is a coaching, feedback and analytics application for rowers and rowing clubs around the world. Currently used by Clubs in the Uk and the US<br/><br/>
-  Built in 2017 using React and a firebase/Node backend, it uses the latest in analytics technology and allows for amazingly detailed comparision among rowers.<br/><br/>
+    <span>RowSquad is a coaching, feedback and analytics application for rowers and rowing clubs around the world. Currently used by clubs in the UK and the US.<br/><br/>
+    Built in 2017 using React with a firebase/Node backend, it uses the latest in analytics and graphing technology and allows for amazingly detailed comparision among rowers.<br/><br/>
     <span className='bold'>Role: </span>Javascript Developer<br/><br/>
-  <span className='bold'>Tech: </span>React, Vanilla Javascript, Flux, styled-components, Firebase, Gulp</span>)
+    <span className='bold'>Tech: </span>React, Vanilla Javascript, Flux, styled-components, Firebase, Gulp</span>)
 
 const AliceBenham = (
-    <span>Alice Benham is one of the fastest growing digital marketing and coaching specialists.<br/><br/>
-    building this has been an evolutionary process, it has become a treasure trove of resources and content and pulls in a large ammount of traffic.<br/><br/>
+    <span>Alice Benham is one of the fastest growing digital marketing and coaching specialists in the UK.<br/><br/>
+    Building this site has been an evolutionary process, over time it has become a treasure trove of marketing resources and content and generates a large ammount of traffic.<br/><br/>
     <span className='bold'>Role: </span>Full Stack<br/><br/>
     <span className='bold'>Tech: </span>Wordpress, Php, Google Cloud Functions, Sass</span>)
 
@@ -208,9 +210,11 @@ const ContentSection = styled.section`
   div{
     font-size: 0.8em;
     position: relative;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     margin: 65px 0 0 0;
     width: 100%;
-    padding: 0 5%;
+    padding: 0 5% 30px;
     color: rgb(36, 36, 36);
     font-weight: 500;
     padding-right: 20px;
@@ -231,6 +235,7 @@ const ContentSection = styled.section`
     @media (min-width: ${Sizes.tablet}) {
       font-size: 1em;
       padding-right: 40px;
+      overflow: hidden;
     }
     @media (min-width: ${Sizes.laptop}) {
       margin: 0 0 0 0;
@@ -254,5 +259,8 @@ const ContentSection = styled.section`
       font-size: 1em;
       vertical-align: -2px;
     }
+  }
+  .coming-soon{
+    background-color: #e27919;
   }
 `

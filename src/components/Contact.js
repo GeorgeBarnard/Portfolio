@@ -69,7 +69,7 @@ h1{
   }
 }
 h3{
-  font-size: 0.8em;
+  font-size: 0.6em;
   width: 100%;
   margin: 0px auto;
   font-weight: 500;
@@ -84,7 +84,7 @@ h3{
 }
 h5{
   margin: 5px auto 0px;
-  font-size: 0.7em;
+  font-size: 0.6em;
   width: 100%;
   font-weight: 500;
   @media (min-width: ${Sizes.tablet}) {

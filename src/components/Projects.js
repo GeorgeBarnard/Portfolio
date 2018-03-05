@@ -109,13 +109,16 @@ margin-top: -2px;
 position: relative;
 background-color: ${props => props.color};
 z-index: 9999;
-padding: 10vh 10%;
+padding: 10vh 0%;
 box-sizing: border-box;
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
+@media (min-width: ${Sizes.tablet}) {
+padding: 10vh 5%;
+}
 @media (min-width: ${Sizes.laptop}) {
-  padding: 50px 10% 200px;
+  padding: 50px 5% 200px;
 }
 .bluebox{
   position: absolute;
@@ -126,7 +129,7 @@ justify-content: center;
   background-color: #080461;
   i{
     position: absolute;
-    top: -55px;
+    top: -15px;
     right: 55px;
     color: white;
     font-size: 2.5em;
@@ -137,7 +140,7 @@ justify-content: center;
   }
   h1{
     position: absolute;
-    top: -20px;
+    top: 20px;
     right: -10px;
     color: white;
     font-size: 1.75em;
@@ -152,7 +155,7 @@ justify-content: center;
 }
 `
 const Cube = styled.section`
-  width: 50%;
+  width: 100%;
   margin: 0px;
   height: 47.5vh;
   transition: 0.2s ease-in;
@@ -161,19 +164,22 @@ const Cube = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (min-width: ${Sizes.tablet}) {
+  width: 50%;
+  }
   h4{
     position: absolute;
     height: 20%;
-    bottom:10px;
-    left: 5%;
-    width: 90%;
-    font-size: 0.8em;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    font-size: 1em;
     font-weight: 700;
     margin: 0;
     z-index: 11;
     color: rgb(32, 32, 32);
     background-color: rgba(255, 255, 255, 1);
-    padding: 7.5px 5px 5px;
+    padding: 14.5px 21px 5px;
     box-sizing: border-box;
     line-height: 14px;
     span{

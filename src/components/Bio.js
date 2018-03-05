@@ -21,8 +21,8 @@ render() {
               <Inner>
                 <TitleSection className='title'>
                   <p>Welcome</p><br />
-                  <p>To</p><br />
-                  <p>My</p><br />
+                  <p>to</p><br />
+                  <p>my</p><br />
                   <p>Portfolio</p><br />
                 </TitleSection>
               </Inner>
@@ -30,10 +30,10 @@ render() {
 
                 <div className='box-content'>
                   <h3 className='title'>What I do</h3>
-                  I am a web developer, I have primarily been working with front end frameworks, such as react, on projects for the past 2 years<br /><br />
-                  Whatever the project demands, is what I intend to deliver.
-                  I have been designing user experiences for over 6 years in both the web and audio software industries<br/><br />
-                  The user comes first and I have, and continue to, try hard to make it as easy for them as possible
+                  I am a web developer, for the past 2 years I have been working with front end frameworks, such as react, to design, build and deliver great commercial products<br /><br />
+                  During this time I have become pretty good at working with clients to find and meet their needs.<br/><br />
+                  I now have over 6 years designing products for both the web and audio software industries, and if I have learnt anything it's that
+                  the user always comes first. I'll do everything I can to make it as easy as possible for them.
                 </div>
 
               </Inner2>
@@ -45,7 +45,7 @@ render() {
                 <span>
                   Strong knowledge of HTML/CSS/JS, React.js and web application development <br/><br/>
                   Interface design: Sass, Styled-components, animation<br/><br/>
-                  Working within small to medium teams with designers, developers and marketing professionals to create effective, intuitive, well tested and well received experiences<br/><br/>
+                  Working with teams of designers, developers and marketing professionals to create effective, intuitive, well tested and well received products<br/><br/>
                   Building full stack solutions with the use of modern back end libraries such as Firebase, using the support of package tools such as Gulp and Webpack
               </span>
               <section className='icon-section'>
@@ -81,7 +81,6 @@ const Container = styled.section`
   position: relative;
   z-index: 999;
   width: 100%;
-  margin-top: 100vh;
   height: fit-content;
   top: 0;
   display: flex;

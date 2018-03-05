@@ -10,6 +10,7 @@ import Menu from './Menu'
 import Slider from './Slider'
 import Projects from './Projects'
 import Contact from './Contact'
+import Intro from './Intro'
 
 class App extends Component {
   constructor() {
@@ -36,25 +37,27 @@ scrollTo(location){
     return (
 
       <Outer
-         className='outer'>
+         className='outer'
+        >
         <Container color='white'>
           <Menu scroll={((value) => this.scrollTo(value))}/>
-          <section className='fixed-element'>
-            <section className='cube1'>
+            {/* <section className='cube1'>
             <h1>George Barnard</h1>
             <h2>Front end Web Developer</h2>
             <h4>(Bad Stock Photo Enthusiast)</h4>
-            </section>
+            </section> */}
+            <Intro />
             {/* <SideSection></SideSection> */}
-            <BottomSection color={blue}>
+            {/* <BottomSection color={blue}>
               <img src={waveguy}></img>
-            </BottomSection>
-          </section>
+              <h2><i className="material-icons">arrow_downward</i></h2>
+              <h2 className='two'><i className="material-icons">arrow_downward</i></h2>
+            </BottomSection> */}
         </Container>
         <Bio ref={(section => (this.bioSection = section))} />
         <Projects ref={(section => (this.workSection = section))} color='white' />
         <Contact ref={(section => (this.contactSection = section))} />
-      <Slider ref={(section => (this.slider = section))} color='white' />
+        <Slider ref={(section => (this.slider = section))} color='white' />
         {/* <Slider /> */}
       </Outer>
     );
@@ -73,25 +76,20 @@ const Sizes = {
 }
 
 const Outer = styled.section`
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow-x:hidden;
-  padding: 0;
-  margin: 0;
+height: 100%;
 `
 
 const Container = styled.section`
   width: 100%;
   position: relative;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
   transition: 0.2s ease-in;
   background-color: ${props => props.color};
   .fixed-element{
     width: 100%;
-    height: 100vh;
-    position: fixed;
+    height: 100%;
+    position: relative;
     pointer-events: none;
     top: 0;
     left: 0;
@@ -161,9 +159,20 @@ const BottomSection = styled.section`
   left: 0;
   text-align: center;
   z-index: 10;
+  h2{
+    color: #080461;
+    position: absolute;
+    bottom: -3.5px;
+    right: -40px;
+    margin: 0;
+    i{
+      font-size: 40px;
+    }
+  }
   img{
     height: 200px;
     position: absolute;
+    z-index: 10;
     right: 10px;
     top: -100px;
     @media (min-width: ${Sizes.tablet}) {
